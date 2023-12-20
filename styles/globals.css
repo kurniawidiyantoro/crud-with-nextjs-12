@@ -24,3 +24,8 @@ a {
     background: black;
   }
 }
+
+.bg-login {
+  background-image: url("/bg-login.jpg");
+  background-size: cover;
+}
