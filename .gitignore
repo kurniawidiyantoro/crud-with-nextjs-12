@@ -38,6 +38,4 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-#files
-Sales.js
-Sales2.js
+
