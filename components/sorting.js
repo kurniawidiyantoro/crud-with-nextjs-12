@@ -53,8 +53,8 @@ const Sorting = ({sortBy, setSales}) => {
               <i
                 className={
                   sortOrder === "asc"
-                    ? "bi bi-sort-alpha-up"
-                    : "bi bi-sort-alpha-down-alt"
+                    ? "bi bi-sort-numeric-up"
+                    : "bi bi-sort-numeric-down-alt"
                 }
               ></i>
             </DropdownItem>

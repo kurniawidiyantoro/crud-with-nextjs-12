@@ -22,8 +22,8 @@ const SortingCustomers = ({sortBy, setCustomers}) => {
         const sortedCustomers = sortBy;
         sortedCustomers.sort((a, b) =>
           sortOrder === "asc"
-            ? a.customer_name.localeCompare(b.city)
-            : b.customer_name.localeCompare(a.city)
+            ? a.city.localeCompare(b.city)
+            : b.city.localeCompare(a.city)
         );
         setCustomers(sortedCustomers);
     
@@ -56,8 +56,8 @@ const SortingCustomers = ({sortBy, setCustomers}) => {
               <i
                 className={
                   sortOrder === "asc"
-                    ? "bi bi-sort-numeric-up"
-                    : "bi bi-sort-numeric-down-alt"
+                    ? "bi bi-sort-alpha-up"
+                    : "bi bi-sort-alpha-down-alt"
                 }
               ></i>
             </DropdownItem>
