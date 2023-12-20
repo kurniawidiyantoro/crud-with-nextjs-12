@@ -74,7 +74,7 @@ const Register = () => {
       className={`min-vh-100 align-items-center d-flex justify-content-center ${styles.registerBg}`}
     >
       <HeadName title="register" />
-      <Card className="w-25 bg-body-secondary border-0 shadow-sm">
+      <Card className="bg-body-secondary border-0 shadow-sm">
         <CardBody>
           <h3 className="text-center">REGISTER</h3>
           <Form onSubmit={handleRegister}>
