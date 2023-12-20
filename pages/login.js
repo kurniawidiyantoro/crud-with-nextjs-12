@@ -16,6 +16,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import HeadName from "../components/headName";
+import Link from "next/link";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -28,10 +29,13 @@ const Login = () => {
     e.preventDefault();
     try {
       setIsLogin(true);
-      const response = await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/api/login`, {
-        username: username,
-        password: password,
-      });
+      const response = await axios.post(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/login`,
+        {
+          username: username,
+          password: password,
+        }
+      );
       console.log(response);
       if (response.data.msg == "Login successfully") {
         sessionStorage.setItem("token", response.data.token);
@@ -46,19 +50,18 @@ const Login = () => {
   };
 
   // to push in "/" if not logout
-  const checkToken = async () => {
-    const token = sessionStorage.getItem("token");
-    try {
-      if (token) {
-        return router.push("/");
-      }
-    } catch (error) {
-      console.log("masuk ke error");
-      router.push("/");
-    }
-  };
-
   useEffect(() => {
+    const checkToken = async () => {
+      const token = sessionStorage.getItem("token");
+      try {
+        if (token) {
+          return router.push("/");
+        }
+      } catch (error) {
+        console.log("masuk ke error");
+        router.push("/");
+      }
+    };
     checkToken();
   }, []);
 
@@ -114,9 +117,9 @@ const Login = () => {
           <br></br>
           <p>
             belum punya akun?{" "}
-            <a href="/register" className="link-primary">
+            <Link href="/register" className="link-primary">
               daftar
-            </a>{" "}
+            </Link>{" "}
             disini{" "}
           </p>
         </CardBody>

@@ -7,23 +7,25 @@ import Footer from "../components/footer";
 
 export default function Home() {
   const router = useRouter();
-  const checkToken = async () => {
-    const token = sessionStorage.getItem("token");
-    try {
-      if (!token) {
-        router.push("/login");
-      } else {
-        console.log("authorized");
-      }
-    } catch (error) {
-      console.log("masuk ke error");
-      router.push("/login");
-    }
-  };
 
+  // to push in "/login" if not login
   useEffect(() => {
+    const checkToken = async () => {
+      const token = sessionStorage.getItem("token");
+      try {
+        if (!token) {
+          router.push("/login");
+        } else {
+          console.log("authorized");
+        }
+      } catch (error) {
+        console.log("masuk ke error");
+        router.push("/login");
+      }
+    };
     checkToken();
   }, []);
+  
   return (
     <div>
       <HeadName title="sales records" />

@@ -47,7 +47,8 @@ const CustomersDetails = () => {
     setPage(selected + 1);
   };
 
-  //protected route
+ // to push in "/login" if not login
+  useEffect(() => {
   const checkToken = async () => {
     const token = sessionStorage.getItem("token");
     try {
@@ -62,7 +63,6 @@ const CustomersDetails = () => {
     }
   };
 
-  useEffect(() => {
     checkToken();
   }, []);
 

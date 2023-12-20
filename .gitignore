@@ -28,9 +28,16 @@ yarn-error.log*
 # local env files
 .env*.local
 
+#public env
+.env
+
 # vercel
 .vercel
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+#files
+Sales.js
+Sales2.js
